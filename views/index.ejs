@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccine Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <main>
+    <div class="alert alert-danger align-items-center d-none" role="alert" id="alert">
+    </div>
+    <div class="wrapper">
+      <form action="/" method="post" id="form-submit">
+        <h1 class="display-4 text-center">Vaccine Checker</h1>
+        <br>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" name="email" class="form-control" required="" id="inputEmail3">
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Select Age</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="age" id="gridRadios1" value="18" checked>
+              <label class="form-check-label" for="gridRadios1">
+                18-45
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="age" id="gridRadios2" value="45">
+              <label class="form-check-label" for="gridRadios2">
+                45+
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="row mb-3">
+          <div class="user-box">
+            <select id="state-dropdown" name="state" onchange="stateChanged(this.value)" class="form-select">
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="user-box">
+            <select id="district-dropdown" name="district" class="form-select">
+              <option value="0">Select District</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-wrapper">
+          <button class="btn btn-primary g-recaptcha" data-callback='onSubmit' data-action='submit' data-sitekey="6LdEn9QaAAAAAC_jmgMXODO8sVhX4d1MuyC_kkbv">Submit</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="row">
+          <div class="col-sm-8 leftside">
+            <h1 class="display-6">About Us</h1>
+            <p class="lead">A berserk Gamer, a Petrolhead, a Tollywood lover and Mr.Wonderful bringing you closer to your jab.  </p>
+          </div>
+          <div class="col-sm-4 rightside">
+            <h1 class="display-6">Contact Us</h1>
+            <i class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/avi-mehta-2a6857194/"> Avi Mehta</a></i>
+            <br>
+            <i class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/bhavyashah3/"> Bhavya Shah</a></i>
+            <br>
+            <i class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/deep-siroya-146808194/"> Deep Siroya</a></i>
+            <br>
+            <i class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/manav-nisar-b3a281144/"> Manav Nisar</a></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/index.js"></script>
+
+</body>
+
+</html>
